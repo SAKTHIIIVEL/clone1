@@ -27,6 +27,13 @@ function Feed() {
     return () => unsubscribe();
   }, []);
 
+  {/* post is a empty array at begining
+    useEffect runs the code inside when the component is loaded (only once because of []).
+    query() – This asks Firebase to get the posts collection and order by timestamp (latest post first).
+    onSnapshot() – Listens to the database in real-time. Whenever a post is added, updated, or deleted, this will run automatically.
+    setPosts() – Updates our posts state with the new data from the database.
+    unsubscribe() – Stops listening to the database when the component is removed (cleanup). */}
+
   return (
     <div className='feed'>
       {/* Story Reel */}
